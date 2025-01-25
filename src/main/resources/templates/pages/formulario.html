@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Formulario</title>
+</head>
+<body>
+
+<div>
+    <h2>Registro de historial clinico</h2>
+    <form th:action="@{/registrar}" method="post" th:object="${paciente}">
+        <br>
+        <div>
+            <label>Nombres:</label>
+            <input type="text" th:field="*{nombre}">
+            <span th:if="${#fields.hasErrors('nombre')}" th:errores="*{nombre}">Nombre incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Apellidos:</label>
+            <input type="text" th:field="*{apellido}">
+            <span th:if="${#fields.hasErrors('apellido')}" th:errores="*{apellido}">Apellido incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Cedula:</label>
+            <input type="text" th:field="*{cedula}">
+            <span th:if="${#fields.hasErrors('cedula')}" th:errores="*{cedula}">Cedula incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Telefono:</label>
+            <input type="text" th:field="*{telefono}">
+            <span th:if="${#fields.hasErrors('telefono')}" th:errores="*{telefono}">Telefono incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Email:</label>
+            <input type="email" th:field="*{email}">
+            <span th:if="${#fields.hasErrors('email')}" th:errores="*{email}">Correo  incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Domicilio:</label>
+            <textarea rows="5" cols="250" th:field="*{domicilio}"></textarea>
+            <span th:if="${#fields.hasErrors('domicilio')}" th:errores="*{domicilio}">Domicilio incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Fecha de nacimiento:</label>
+            <input type="date" th:field="*{fechaNacimiento}">
+            <span th:if="${#fields.hasErrors('fechaNacimiento')}" th:errores="*{fechaNacimiento}">Fecha incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Edad:</label>
+            <input type="text" th:field="*{edad}">
+            <span th:if="${#fields.hasErrors('edad')}" th:errores="*{edad}">Edad incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Peso:</label>
+            <input type="text" th:field="*{peso}">KL
+            <span th:if="${#fields.hasErrors('peso')}" th:errores="*{peso}">Peso incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Estatura:</label>
+            <input type="text" th:field="*{estatura}">M
+            <span th:if="${#fields.hasErrors('estatura')}" th:errores="*{estatura}">Estatura incorrecto</span>
+        </div>
+        <br>
+        <div>
+            <label>Genero:</label>
+            <input type="radio" value="Masculino" th:field="*{genero}">Masculino
+            <input type="radio" value="Femenino" th:field="*{genero}">Femenino
+            <input type="radio" value="no definido" th:field="*{genero}">No definido
+            <span th:if="${#fields.hasErrors('genero')}" th:errores="*{genero}"> Elige una opcion</span>
+        </div>
+        <br>
+        <div>
+            <label>Alergias</label>
+            <select th:field="*{alergias}">
+                <option th:each="p:${alergias}" th:value="${p}" th:text="${p}" ></option>
+            </select>
+            <span th:if="${#fields.hasErrors('alergias')}" th:errores="*{alergias}">Elige una opcion</span>
+        </div>
+        <br>
+        <div>
+            <label>Nacionalidad:</label>
+            <input type="radio" value="Ecuatoriano" th:field="*{nacionalidad}">Ecuatoriano
+            <input type="radio" value="Extranjero" th:field="*{nacionalidad}">Extranjero
+            <span th:if="${#fields.hasErrors('nacionalidad')}" th:errores="*{nacionalidad}">Selecciona nacionalidad</span>
+        </div>
+        <br>
+        <div>
+        <br>
+            <input type="submit" value="Guardar">
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

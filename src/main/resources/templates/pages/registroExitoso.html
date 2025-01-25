@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+    <title>Registro Exitoso</title>
+</head>
+<body>
+<div>
+    <h2>Registro Exitoso </h2>
+    <span>Nombres: </span>
+    <span th:text="${paciente.nombre}"></span>
+    <br>
+    <span>Apellidos: </span>
+    <span th:text="${paciente.apellido}"></span>
+    <br>
+    <span>Cedula: </span>
+    <span th:text="${paciente.cedula}"></span>
+    <br>
+
+    <span>Telefono: </span>
+    <span th:text="${paciente.telefono}"></span>
+    <br>
+    <span>Email: </span>
+    <span th:text="${paciente.email}"></span>
+    <br>
+
+    <span>Domicilio: </span>
+    <span th:text="${paciente.domicilio}"></span>
+    <br>
+
+    <span>Fecha de nacimiento: </span>
+    <span th:text="${paciente.fechaNacimiento}"></span>
+    <br>
+
+    <span>Edad: </span>
+    <span th:text="${paciente.edad}"></span>
+    <br>
+
+    <span>Peso: </span>
+    <span th:text="${paciente.peso}"></span>
+    <br>
+
+    <span>Estatura: </span>
+    <span th:text="${paciente.estatura}"></span>
+    <br>
+
+    <span>Genero: </span>
+    <span th:text="${paciente.genero}"></span>
+    <br>
+
+    <span>Alergias: </span>
+    <span th:text="${paciente.alergias}"></span>
+    <br>
+
+    <span>Nacionalidad: </span>
+    <span th:text="${paciente.nacionalidad}"></span>
+
+
+</div>
+</body>
+</html>
