@@ -29,6 +29,7 @@ public class paciente {
 
     @NotBlank
     @Email(message = "Ingrese el correo en formato válido")
+    @Pattern(regexp = ".*\\.com$", message = "El correo debe terminar en .com")
     private String email;
 
     @Size(min = 10, max =150)
